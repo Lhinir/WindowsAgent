@@ -8,16 +8,18 @@ namespace WinAgentConsole
     {
         static void Main(string[] args)
         {
-            EventLog log = new EventLog("Security");
-            var entries = log.Entries.Cast<EventLogEntry>().Where(x => x.InstanceId == 4624).Select(x => new
+            string log = "Security";
+            EventLog demoLog = new EventLog(log);
+            EventLogEntryCollection entries = demoLog.Entries;
+            foreach (EventLogEntry entry in entries)
             {
-                x.MachineName,
-                x.Site,
-                x.Source,
-                x.UserName,
-                x.Message
-            }).ToList();
-            Console.WriteLine(entries[0].UserName);
+                Console.WriteLine("Level: {0}", entry.EntryType);
+                Console.WriteLine("Event id: {0}", entry.InstanceId);
+                Console.WriteLine("Message: {0}", entry.Message);
+                Console.WriteLine("Source: {0}", entry.Source);
+                Console.WriteLine("Date: {0}", entry.TimeGenerated);
+                Console.WriteLine("--------------------------------");
+            }
 
         }
        
