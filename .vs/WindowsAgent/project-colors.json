@@ -1,5 +1,16 @@
 {
   "Version": 1,
-  "ProjectMap": {},
-  "NextColorIndex": 0
+  "ProjectMap": {
+    "c6a90635-1c9b-4cd9-9e39-6a26551cc34e": {
+      "ProjectGuid": "c6a90635-1c9b-4cd9-9e39-6a26551cc34e",
+      "DisplayName": "WinAgentConsole",
+      "ColorIndex": 0
+    },
+    "a05d8e8e-3407-4873-9622-e72efae63d8e": {
+      "ProjectGuid": "a05d8e8e-3407-4873-9622-e72efae63d8e",
+      "DisplayName": "Core",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
 }
