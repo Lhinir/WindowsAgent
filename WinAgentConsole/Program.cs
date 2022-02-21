@@ -19,6 +19,8 @@ namespace WinAgentConsole
             DateTime dt = DateTime.Now.AddHours(-5.00);
             Console.WriteLine(dt.ToString());
 
+            string karar = "";
+            menu:
             foreach (EventLogEntry entry in log.Entries)
             {
                 if (entry.TimeGenerated >= dt)
@@ -30,9 +32,17 @@ namespace WinAgentConsole
                     Console.WriteLine("Mesaj: " + entry.Message);
                     Console.WriteLine("Oluşturulma Zamanı: " + entry.TimeGenerated);
                     Console.WriteLine("--------------------------------------------");
-                    Console.ReadLine();
                 }
-
+            }
+            Console.WriteLine("Gösterilecek olay kalmadı. Yenilemek ister misiniz ? E/H");
+            karar = Console.ReadLine();
+            if (karar is "e" or "E")
+            {
+                goto menu;
+            }
+            else if (karar is "h" or "H")
+            {
+                Environment.Exit(0);
             }
         }
     }
