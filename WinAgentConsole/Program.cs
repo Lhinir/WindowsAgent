@@ -34,6 +34,7 @@ namespace WinAgentConsole
                     Console.WriteLine("--------------------------------------------");
                 }
             }
+            secim:
             Console.WriteLine("Gösterilecek olay kalmadı. Yenilemek ister misiniz ? E/H");
             karar = Console.ReadLine();
             if (karar is "e" or "E")
@@ -43,6 +44,11 @@ namespace WinAgentConsole
             else if (karar is "h" or "H")
             {
                 Environment.Exit(0);
+            }
+            else
+            {
+                Console.WriteLine("Yanlış bir tuşlama yaptınız. Lütfen E yada H basınız.");
+                goto secim;
             }
         }
     }
